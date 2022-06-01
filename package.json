@@ -1,9 +1,10 @@
 {
-  "name": "native-datepicker",
+  "name": "@lxe/native-datetimepicker",
   "version": "1.1.1",
   "main": "src/index.js",
-  "repository": "https://github.com/codeclown/native-datepicker",
+  "repository": "https://github.com/lxe/native-datetimepicker",
   "author": "Martti Laine <martti@marttilaine.com>",
+  "contributors": [ "Aleksey Smolenchuk <lxe@lxe.co>" ],
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.13.0"
