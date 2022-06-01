@@ -43,7 +43,7 @@
   NativeDatepicker.prototype.buildDom = function buildDom() {
     // DOM structure:
     //   <span class="NativeDatepicker">
-    //     <input type="date" class="NativeDatepicker__input">
+    //     <input type="datetime-local" class="NativeDatepicker__input">
     //   </span>
 
     var element =
@@ -59,7 +59,7 @@
     }
 
     var dateInputElement = this.options.win.document.createElement('input');
-    dateInputElement.type = 'date';
+    dateInputElement.type = 'datetime-local';
     dateInputElement.classList.add(classNames.input);
     element.appendChild(dateInputElement);
     this.dateInputElement = dateInputElement;
@@ -68,14 +68,7 @@
     dateInputElement.addEventListener(
       'change',
       function onNativeDatepickerChange() {
-        var newValue = self.fullValue.replace(
-          dateRegex,
-          dateInputElement.value
-        );
-        // Regex didn't match, fallback to setting the entire value
-        if (!newValue.includes(dateInputElement.value)) {
-          newValue = dateInputElement.value;
-        }
+        var newValue = dateInputElement.value;
         dateInputElement.value = self.dateValue;
         self.options.onChange(newValue);
       }
